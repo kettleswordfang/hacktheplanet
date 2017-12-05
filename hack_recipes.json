@@ -9,6 +9,7 @@
         "difficulty": 8,
         "time": 120500,
         "reversible": true,
+        "autolearn": false,
         "book_learn": [
             ["hacker_manifesto", 7],
             ["recipe_lab_elec", 7]
@@ -45,6 +46,7 @@
         "difficulty": 8,
         "time": 97500,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [
             ["hacker_manifesto",  6],
             ["recipe_lab_elec"     ,  4]
@@ -83,6 +85,7 @@
         "difficulty": 6,
         "time": 100000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [
             [ "hacker_manifesto",  6 ]
         ],
@@ -104,6 +107,7 @@
         "difficulty": 8,
         "time": 100000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [
             [ "hacker_manifesto",  7 ]
         ],
@@ -126,6 +130,7 @@
         "difficulty": 9,
         "time": 100000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [
             [ "hacker_manifesto",  8 ]
         ],
@@ -148,6 +153,7 @@
         "difficulty": 8,
         "time": 97500,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [ 
             [ "hacker_manifesto",  6] 
         ],
@@ -177,6 +183,7 @@
         "difficulty": 8,
         "time": 97500,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [ 
             [ "hacker_manifesto",  6] 
         ],
@@ -208,6 +215,7 @@
         "difficulty": 5,
         "time": 75000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [ 
             [ "hacker_manifesto",  4] 
         ],
@@ -239,6 +247,7 @@
         "difficulty": 4,
         "time": 75000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [ 
             [ "hacker_manifesto",  2] 
         ],
@@ -271,6 +280,7 @@
         "difficulty": 4,
         "time": 80000,
         "reversible": false,
+        "autolearn": false,
         "book_learn": [ 
             [ "hacker_manifesto",  2] 
         ],
