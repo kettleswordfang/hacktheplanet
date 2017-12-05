@@ -1,28 +1,62 @@
 [
-    {
-        "id": "power_glove_box",
-        "type": "GENERIC",
-        "category": "other",
-        "name": "vintage Zintendo Power Glove box",
-        "name_plural": "radio car boxes",
-        "description": "The latest and greatest in video game technology!  Everything* you need to play straight away!  Disassemble to unpack and enjoy.",
-        "weight": 3200,
-        "volume": 8,
-        "price": 30000,
-        "to_hit": -1,
-        "material": [ "plastic" ],
-        "symbol": ")",
-        "color": "red"
+{
+        "type": "profession",
+        "ident": "ghacker",
+        "name": "Guerilla Hacker",
+        "description": "You moved on quickly from getting free calls to breaking firewalls at the local military base.  What you found in their systems was frightening, but it seems too late to do anything about it now.",
+        "points": 2,
+        "skills": [
+            {
+                "level": 4,
+                "name": "computer"
+            },
+            {
+                "level": 2,
+                "name": "electronics"
+            }
+        ],
+        "items": {
+            "both": [
+                "pants",
+                ["tshirt_text", "allyourbase"],
+                "winter_jacket_army",
+                "socks",
+                "boots_combat",
+                "hack_watch",
+                "electropick",
+                "mbag",
+                "laptop",
+                "hacker_manifesto",
+                "screwdriver_set",
+                "switchblade",
+                "bandana"
+            ],
+            "male": [
+                "briefs"
+            ],
+            "female": [
+                "panties"
+            ]
+        }
     },
     {
-    "result": "power_glove_box",
-    "type": "uncraft",
-    "time": 500,
-    "components": [
-      [ [ "hack_watch", 1 ] ],
-      [ [ "software_math", 1 ] ],
-      [ [ "battery", 40 ] ]
-    ]
+        "id": "hacker_manifesto",
+        "type": "BOOK",
+        "name": " Phrack Magazine",
+        "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.",
+        "weight": 1985,
+        "volume": 7,
+        "price": 1337,
+        "bashing": 5,
+        "material": [ "paper" ],
+        "symbol": "?",
+        "color": "blue",
+        "skill": "computer",
+        "required_level": 8,
+        "max_level": 10,
+        "intelligence": 12,
+        "time": 45,
+        "fun": -1
     },
     {
         "id": "cashcard_encoder",
@@ -39,19 +73,105 @@
         "symbol": ";"      
     },
     {
-        "id": "cashcard_reader",
-        "type": "TOOL",
-        "symbol": ",",
-        "color": "gray",
-        "name": "portable cashcard reader",
-        "description": "This device can read a cashcard and transfer the balance to another card.  Before the cataclysm, possession of this would have landed you straight in jail.  It is solar powered, and barely uses any charge.",
-        "price": 100000,
-        "material": [ "steel", "plastic" ],
-        "weight": 400,
-        "volume": 1,
-        "bashing": 1,
-        "category": "tools",
-        "use_action": "iuse_cashcard_transfer"
+        "type" : "recipe",
+        "result": "cashcard_encoder",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "electronics",
+        "skills_required": [ "fabrication", 6 ],
+        "difficulty": 8,
+        "time": 120500,
+        "reversible": true,
+        "book_learn": [
+            ["hacker_manifesto", 7],
+            ["recipe_lab_elec", 7]
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1},
+            {"id": "HAMMER", "level": 1, "amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 40],
+            ["toolset"          , 40]],
+            [["software_hacking", -1]],
+            [["laptop"          , 75]]
+        ],
+        "components": [
+            [["processor"       ,  1]],
+            [["RAM"             ,  2]],
+            [["small_lcd_screen",  1]],
+            [["e_scrap"         ,  4]],
+            [["circuit"         ,  1]],
+            [["cash_card"       ,  1]],
+            [["power_supply"    ,  2]],
+            [["plastic_chunk"   ,  2]],
+            [["scrap"           ,  1]]
+        ]
+    },
+    {
+        "type": "recipe",
+        "result": "gasdiscount_platinum",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_OTHER",
+        "skill_used": "computer",
+        "skills_required": [ "electronics", 5 ],
+        "difficulty": 6,
+        "time": 100000,
+        "reversible": false,
+        "book_learn": [
+            [ "hacker_manifesto",  6 ]
+        ],
+        "tools": [
+            [[ "cashcard_encoder", -1]],
+            [[ "laptop"        , -1 ]]
+        ],
+        "components": [
+            [[ "cash_card"      , 1 ]]
+        ]
+    },
+    {
+        "type": "recipe",
+        "result": "id_science",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_OTHER",
+        "skill_used": "computer",
+        "skills_required": [ "electronics", 5 ],
+        "difficulty": 8,
+        "time": 100000,
+        "reversible": false,
+        "book_learn": [
+            [ "hacker_manifesto",  7 ]
+        ],
+        "tools": [
+            [[ "cashcard_encoder", -1]],
+            [[ "laptop"        , -1 ]]
+        ],
+        "components": [
+            [[ "cash_card"      , 1 ],
+            [  "id_military"    , 1 ]]
+        ]
+    },   
+    {
+        "type": "recipe",
+        "result": "id_military",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_OTHER",
+        "skill_used": "computer",
+        "skills_required": [ "electronics", 5 ],
+        "difficulty": 9,
+        "time": 100000,
+        "reversible": false,
+        "book_learn": [
+            [ "hacker_manifesto",  8 ]
+        ],
+        "tools": [
+            [[ "cashcard_encoder", -1]],
+            [[ "laptop"        , -1 ]]
+        ],
+        "components": [
+            [[ "cash_card"      , 1 ],
+            [  "id_science"    , 1 ]]
+        ]
     },
     {
         "id": "makeshift_navigation",
@@ -82,6 +202,35 @@
         "flags": [ "WATCH", "ALARMCLOCK" ]
     },
     {
+        "type" : "recipe",
+        "result": "makeshift_navigation",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "computer",
+        "skills_required": [ "electronics", 5 ],
+        "difficulty": 8,
+        "time": 97500,
+        "reversible": false,
+        "book_learn": [ 
+            [ "hacker_manifesto",  6] 
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 40],
+            ["toolset"          , 40]],
+            [["software_hacking", -1]],
+            [["software_math"   , -1]],
+            [["laptop"          , -1]]
+        ],
+        "components": [
+            [["e_scrap"         ,  1]],
+            [["antenna"         ,  3]],
+            [["cell_phone"      ,  1]]
+        ]
+    },
+    {
         "id": "electroweather",
         "type": "TOOL",
         "category": "tools",
@@ -106,6 +255,37 @@
         "flags": [ "WATCH", "THERMOMETER", "HYGROMETER", "BAROMETER" ]
     },
     {
+        "type" : "recipe",
+        "result": "electroweather",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "computer",
+        "skills_required": [ "electronics", 5 ],
+        "difficulty": 8,
+        "time": 97500,
+        "reversible": false,
+        "book_learn": [ 
+            [ "hacker_manifesto",  6] 
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 40],
+            ["toolset"          , 40]],
+            [["software_math"   , -1]],
+            [["laptop"          , -1]]
+        ],
+        "components": [
+            [["e_scrap"         ,  1]],
+            [["antenna"         ,  2]],
+            [["thermometer"     ,  1]],
+            [["hygrometer"      ,  1]],
+            [["barometer"       ,  1]],
+            [["cell_phone"      ,  1]]
+        ]
+    },
+    {
         "id": "electropick",
         "type": "TOOL",
         "category": "tools",
@@ -128,11 +308,99 @@
             "pick_quality": 5
         }
     },
+{
+        "type" : "recipe",
+        "result": "electropick",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "electronics",
+        "skills_required": [ "computer", 4 ],
+        "difficulty": 5,
+        "time": 75000,
+        "reversible": false,
+        "book_learn": [ 
+            [ "hacker_manifesto",  4] 
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1},
+            {"id": "HAMMER", "level": 1, "amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 40],
+            ["toolset"          , 40]],
+            [["laptop"          , -1]]
+        ],
+        "components": [
+            [["e_scrap"         ,  6]],
+            [["antenna"         ,  1]],
+            [["pipe"            ,  1]],
+            [["circuit"         ,  2]],
+            [["power_supply"    ,  1]],
+            [["plastic_chunk"   ,  3]]
+        ]
+    },
+{
+        "type" : "recipe",
+        "result": "hack_watch_adv",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "electronics",
+        "skills_required": [ "computer", 4 ],
+        "difficulty": 4,
+        "time": 75000,
+        "reversible": false,
+        "book_learn": [ 
+            [ "hacker_manifesto",  2] 
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1},
+            {"id": "HAMMER", "level": 1, "amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 50],
+            ["toolset"          , 50]],
+            [["laptop"          , -1]]
+        ],
+        "components": [
+            [["e_scrap"         ,  1]],
+            [["circuit"         ,  2]],
+            [["power_supply"    ,  1]],
+            [["thermometer"     ,  1]],
+            [["amplifier"       ,  1]],
+            [["plastic_chunk"   ,  3]],
+            [["tazer"           ,  1]]
+        ]
+    },
     {
+        "id": "power_glove_box",
+        "type": "GENERIC",
+        "category": "other",
+        "name": "vintage Zintendo Power Glove box",
+        "name_plural": "vintage Zintendo Power Glove boxes",
+        "description": "The latest and greatest in video game technology!  Everything* you need to play straight away!  Disassemble to unpack and enjoy.",
+        "weight": 3200,
+        "volume": 8,
+        "price": 30000,
+        "to_hit": -1,
+        "material": [ "plastic" ],
+        "symbol": ")",
+        "color": "red"
+    },
+    {
+    "result": "power_glove_box",
+    "type": "uncraft",
+    "time": 500,
+    "components": [
+      [ [ "hack_watch", 1 ] ],
+      [ [ "software_math", 1 ] ],
+      [ [ "battery", 40 ] ]
+    ]
+  },
+  {
         "type" : "TOOL_ARMOR",
         "id" : "hack_watch",
-        "name" : "Zintendo Power Glove (off)",
-        "name_plural": "Zintendo Power Gloves (off)",
+        "name" : "Zintendo power glove (off)",
+        "name_plural": "Zintendo power gloves (off)",
         "volume" : 1,
         "description" : "A digital power glove with various built-in electronic systems, powered by standard batteries.  Activate to select a function.",
         "weight" : 180,
@@ -174,8 +442,8 @@
         "type": "TOOL_ARMOR",
         "id": "hack_watch_on",
         "copy-from": "hack_watch",
-        "name": "Zintendo Power Glove (on)",
-        "name_plural": "Zintendo Power Gloves (on)",
+        "name": "Zintendo power glove (on)",
+        "name_plural": "Zintendo power gloves (on)",
         "turns_per_charge": 1,
         "revert_to": "hack_watch",
         "use_action": [
@@ -245,8 +513,8 @@
         "type": "TOOL_ARMOR",
         "id": "hack_watch_adv_on",
         "copy-from": "hack_watch",
-        "name": "modified Power Glove (on)",
-        "name_plural": "modified Power Gloves (on)",
+        "name": "advanced power glove (on)",
+        "name_plural": "advanced power gloves (on)",
         "turns_per_charge": 1,
         "revert_to": "hack_watch",
         "use_action": {
@@ -288,6 +556,40 @@
         "turns_per_charge": 2,
         "use_action": "RADIOCARON",
         "flags": [ "LIGHT_15", "RADIO_CONTAINER", "TRADER_AVOID" ]
+    },
+    {
+        "type": "recipe",
+        "result": "radio_scope",
+        "category": "CC_ELECTRONIC",
+        "subcategory": "CSC_ELECTRONIC_TOOLS",
+        "skill_used": "electronics",
+        "skills_required": [ "mechanics", 2 ],
+        "difficulty": 4,
+        "time": 80000,
+        "reversible": false,
+        "book_learn": [ 
+            [ "hacker_manifesto",  2] 
+        ],
+        "qualities": [
+            {"id": "SCREW_FINE", "level": 1 ,"amount": 1},
+            {"id": "HAMMER", "level": 1, "amount": 1}
+        ],
+        "tools": [
+            [["soldering_iron"  , 40],
+            ["toolset"          , 40]]
+        ],
+        "components": [
+            [["e_scrap"         ,  4]],
+            [["antenna"         ,  2]],
+            [["circuit"         ,  1]],
+            [["power_supply"    ,  1]],
+            [["plastic_chunk"   ,  2]],
+            [ ["pistol_scope", 1],
+            ["rifle_scope", 1],
+            ["acog_scope", 1],
+            ["riv_scope", 1]],
+            [["wheel_caster", 1]]
+        ]
     },
     {
         "type" : "TOOL_ARMOR",
