@@ -1,6 +1,6 @@
 ~~~~
 "ident": "hacking.json",  
-"category": "actual whole mod, maybe?",~~
+"category": "vintage cyberpunk gear",~~
 "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.  
 This annual volume is packed with blueprints and circuit schematics.
 ~~~~
