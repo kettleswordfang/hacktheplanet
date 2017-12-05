@@ -1,0 +1,50 @@
+[
+    {
+        "type": "profession",
+        "ident": "ghacker",
+        "name": "Guerilla Hacker",
+        "description": "You moved on quickly from getting free calls to breaking firewalls at the local military base.  What you found in their systems was frightening, but it seems too late to do anything about it now.",
+        "points": 2,
+        "skills": [
+            {
+                "level": 4,
+                "name": "computer"
+            },
+            {
+                "level": 2,
+                "name": "electronics"
+            }
+        ],
+        "items": {
+            "both": [
+                "pants",
+                ["tshirt_text", "allyourbase"],
+                "winter_jacket_army",
+                "socks",
+                "boots_combat",
+                "hack_watch",
+                "electropick",
+                "mbag",
+                "laptop",
+                "hacker_manifesto",
+                "screwdriver_set",
+                "switchblade",
+                "bandana"
+            ],
+            "male": [
+                "briefs"
+            ],
+            "female": [
+                "panties"
+            ]
+        }
+    },
+    {
+        "type": "profession",
+        "ident": "hacker",
+        "edit-mode": "modify",
+        "items": {
+            "add:both": [ "hacker_manifesto" ]
+        }
+    }
+]

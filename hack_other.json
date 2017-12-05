@@ -1,0 +1,34 @@
+[
+    {
+        "type" : "item_action",
+        "id" : "iuse_cashcard_transfer",
+        "name" : "load cards into reader"
+    },
+    {
+        "type": "item_group",
+        "subtype": "distribution",
+        "id": "atm_authcard",
+        "entries": [
+            { "item": "auth_bankchip", "prob": 20 },
+            { "item": "burnt_out_bankchip", "prob": 80 }
+        ]
+    },
+    {
+        "type" : "terrain",
+        "id" : "t_atm",
+        "copy-from": "t_atm",
+        "bash": {
+            "str_min": 40, "str_max": 210,
+            "explosive" : 5,
+            "sound": "Critical failure imminent, self destruct activated.  Have a nice day!",
+            "sound_fail": "clang!",
+            "ter_set": "t_floor",
+            "items": [
+                { "item": "steel_chunk", "count": [1, 3] },
+                { "item": "scrap", "count": [4, 8] },
+                { "group": "atm_authcard", "prob": 100 }
+                
+            ]
+        }
+    }
+]

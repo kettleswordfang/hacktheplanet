@@ -1,0 +1,43 @@
+[
+    {
+        "id": "hacker_manifesto",
+        "type": "BOOK",
+        "name": " Phrack Magazine",
+        "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.",
+        "weight": 1985,
+        "volume": 7,
+        "price": 1337,
+        "bashing": 5,
+        "material": [ "paper" ],
+        "symbol": "?",
+        "color": "blue",
+        "skill": "computer",
+        "required_level": 8,
+        "max_level": 10,
+        "intelligence": 12,
+        "time": 45,
+        "fun": -1
+    },
+    {
+        "type": "GENERIC",
+        "id": "auth_bankchip",
+        "symbol": ",",
+        "color": "dark_gray",
+        "name": "bank authorization chip",
+        "category": "spare_parts",
+        "description": "The authorization control an ATM uses to connect to the bank network.  This chip could be used to make a portable cashcard reader.",
+        "price": 13500,
+        "material": [ "steel", "plastic" ],
+        "weight": 317,
+        "volume": 10,
+        "to_hit": -1,
+        "flags": [ "TRADER_AVOID" ]
+    },
+    {
+        "type":"GENERIC",
+        "id": "burnt_out_bankchip",
+        "copy-from": "auth_bankchip",
+        "name": "burnt out authorization chip",
+        "description": "The authorization control an ATM uses to connect to the bank network.  This object has been destroyed by excessive electric current and is now useless."
+    }
+]
