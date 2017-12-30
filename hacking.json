@@ -42,8 +42,8 @@
     {
         "id": "hacker_manifesto",
         "type": "BOOK",
-        "name": " Phrack Magazine",
-        "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.",
+        "name": "Phrack Magazine",
+        "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.  This annual volume is packed with blueprints and circuit schematics.",
         "weight": 1985,
         "volume": 7,
         "price": 1337,
