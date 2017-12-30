@@ -94,7 +94,7 @@
             [["soldering_iron"  , 40],
             ["toolset"          , 40]],
             [["software_hacking", -1]],
-            [["laptop"          , 75]]
+            [["laptop"          , -1]]
         ],
         "components": [
             [["processor"       ,  1]],
