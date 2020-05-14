@@ -10,10 +10,11 @@ if you want, see https://github.com/kettleswordfang/hacktheplanet/wiki for more 
 
 
 **new profession**
+~~~~
 "description": "You moved on quickly from getting free calls to breaking firewalls at the local military base.  What you found in their systems was frightening but it seems too late to do anything about it now."
 "skills": Computer 4, Electronics 2, Lockpick 2
 "starting gear": Zintendo power glove, electropick, Phrack magazine, switchblade, screwdriver set, messenger bag
-
+~~~~
 
 **TO DO**
 + ~~update to 0.E~~
