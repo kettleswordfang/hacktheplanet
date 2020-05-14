@@ -1,0 +1,104 @@
+[
+  {
+    "type": "profession",
+    "ident": "ghacker",
+    "name": "Guerilla Hacker",
+    "description": "You moved on quickly from getting free calls to breaking firewalls at the local military base.  What you found in their systems was frightening but it seems too late to do anything about it now.",
+    "points": 2,
+    "skills": [ 
+    { "level": 4, "name": "computer" }, 
+    { "level": 2, "name": "electronics" }, 
+    { "level": 2, "name": "lockpick" } ],
+    "items": {
+      "both": [
+        "pants",
+        [ "tshirt_text", "allyourbase" ],
+        "winter_jacket_army",
+        "socks",
+        "boots_combat",
+        "hack_watch",
+        "electropick",
+        "mbag",
+        "laptop",
+        "hacker_manifesto",
+        "screwdriver_set",
+        "switchblade",
+        "bandana"
+      ],
+      "male": [ "briefs" ],
+      "female": [ "panties" ]
+    }
+  },
+  {
+    "id": "hacker_manifesto",
+    "type": "BOOK",
+    "name": { "str": "Phrack Magazine", "str_pl": "copies of Phrack Magazine" },
+    "description": "A magazine written by and for hackers - the best, and by far the longest running hacker zine.",
+    "weight": "1985 g",
+    "volume": "1400 ml",
+    "price": 1337,
+    "price_postapoc": 500,
+    "bashing": 5,
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "blue",
+    "skill": "computer",
+    "required_level": 8,
+    "max_level": 10,
+    "intelligence": 10,
+    "time": "45 m",
+    "fun": -1
+  },
+  {
+    "type": "terrain",
+    "id": "t_atm",
+    "name": "ATM",
+    "description": "For your banking convenience, this Automated Teller Machine is fully capable of operating autonomously in the event of complete network failure.  You can deposit funds from cash cards and migrate all of your inflation-adjusted earnings to a single card.  These things have seen better days.  There's been a run on the bank, and this machine has the dents and cracks to prove it.",
+    "symbol": "&",
+    "color": "magenta",
+    "move_cost": 0,
+    "coverage": 55,
+    "flags": [ "TRANSPARENT", "NOITEM", "ALARMED", "REDUCE_SCENT", "PERMEABLE" ],
+    "examine_action": "atm",
+    "bash": {
+      "str_min": 40,
+      "str_max": 210,
+      "explosive": 5,
+      "sound": "Critical failure imminent, self destruct activated.  Have a nice day!",
+      "sound_fail": "clang!",
+      "ter_set": "t_floor",
+      "items": [ 
+        { "item": "steel_chunk", "count": [ 1, 3 ] }, 
+        { "item": "scrap", "count": [ 4, 8 ] },
+        { "group": "atm_authcard", "prob": 100 }
+      ]}
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "atm_authcard",
+    "entries": [ { "item": "auth_bankchip", "prob": 20 }, { "item": "burnt_out_bankchip", "prob": 80 } ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "auth_bankchip",
+    "symbol": ",",
+    "color": "dark_gray",
+    "name": "bank authorization chip",
+    "category": "spare_parts",
+   "description": "The authorization control an ATM uses to write to and validate cash cards.  This chip could be used to make a magnetic stripe encoder.",
+    "price": 13500,
+    "material": [ "steel", "plastic" ],
+    "weight": 317,
+    "volume": 10,
+    "to_hit": -1,
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "burnt_out_bankchip",
+    "copy-from": "auth_bankchip",
+    "name": "burnt out authorization chip",
+    "description": "The authorization control an ATM uses to validate cash cards.  This chip has been destroyed by excessive electric current and is now useless."
+  }
+]

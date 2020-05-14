@@ -1,0 +1,88 @@
+[
+  {
+    "type" : "item_group",
+    "id" : "cop_evidence",
+    "items":[
+      ["hack_watch_adv", 2],
+      [ "electropick", 5] 
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "magazines",
+    "items":[
+      ["hacker_manifesto", 3]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "elecsto_books",
+    "items":[
+      ["hacker_manifesto", 5]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "elecsto_persele",
+    "items":[
+      ["power_glove_box", 35]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "electronics",
+    "items":[
+      ["hacker_manifesto", 5],
+      ["monocular_lcd", 1]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "livingroom",
+    "items":[
+      ["power_glove_box", 3]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "NC_HACKER_misc",
+    "items":[
+      ["hacker_manifesto", 4]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "npc_hacker",
+    "items":[
+      ["hacker_manifesto", 25]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "pawn",
+    "items":[
+      ["power_glove_box", 3]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "toy_store",
+    "items":[
+      ["power_glove_box", 10]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "rare",
+    "items":[
+      ["monocular_lcd", 1]
+    ]
+  },
+  {
+    "type" : "item_group",
+    "id" : "school",
+    "items":[
+      ["software_math", 10]
+    ]
+  }
+]

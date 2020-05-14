@@ -1,0 +1,245 @@
+[
+  {
+    "id": "power_glove_box",
+    "type": "GENERIC",
+    "category": "other",
+    "name": { "str": "vintage Zintendo Power Glove box", "str_pl": "vintage Zintendo Power Glove boxes" },
+    "description": "The latest and greatest in video game technology!  Everything* you need to play straight away!  Disassemble to unpack and enjoy.",
+    "weight": "3000 g",
+    "volume": "1800 ml",
+    "price": 30000,
+    "to_hit": -1,
+    "material": [ "plastic" ],
+    "symbol": ")",
+    "color": "red"
+  },
+  {
+    "result": "power_glove_box",
+    "type": "uncraft",
+    "time": 500,
+    "components": [ [ [ "hack_watch", 1 ] ], [ [ "software_math", 1 ] ], [ [ "light_disposable_cell", 40 ] ] ]
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "hack_watch",
+    "name": { "str": "Zintendo power glove (off)", "str_pl": "Zintendo power gloves (off)" },
+    "description": "A digital power glove with various built-in electronic systems, powered by standard batteries.  Activate to select a function.",
+    "weight": "800 g",
+    "volume": "220 ml",
+    "to_hit": -1,
+    "color": "light_gray",
+    "covers": [ "HAND_EITHER" ],
+    "price": 6000,
+    "material": [ "plastic" ],
+    "flags": [ "WATCH", "WATER_FRIENDLY", "BELTED", "FRAGILE", "ALLOWS_NATURAL_ATTACKS", "NO_UNLOAD", "OVERSIZE" ],
+    "coverage": 15,
+    "symbol": "[",
+    "ammo": "battery",
+    "max_charges": 40,
+    "initial_charges": 40,
+    "charges_per_use": 5,
+    "no_charges_message": "The power glove is out of batteries.",
+    "use_action": [
+      { "type": "PORTABLE_GAME" },
+      { "type": "RADIOCONTROL" },
+      { "type": "REMOTEVEH" },
+      {
+        "type": "transform",
+        "target": "hack_watch_on",
+        "menu_text": "Turn on the screen",
+        
+        "msg": "You activate the glove and the screen lights up.",
+        "need_charges": 5,
+        "need_charges_msg": "Not enough charge to activate.",
+        "moves": 10
+      },
+      {
+        "type": "manualnoise",
+        "no_charges_message": "The power glove is out of batteries.",
+        "use_message": "Bzzzzzzzzzzt!"
+      }
+    ],
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_battery_cell",
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell",
+          "light_minus_disposable_cell",
+          "light_disposable_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 2
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "hack_watch_on",
+    "copy-from": "hack_watch",
+    "name": { "str": "Zintendo power glove (on)", "str_pl": "Zintendo power gloves (on)" },
+    "turns_per_charge": 1,
+    "revert_to": "hack_watch",
+    "use_action": [
+      { "type": "PORTABLE_GAME" },
+      { "type": "RADIOCONTROL" },
+      { "type": "REMOTEVEH" },
+      {
+        "menu_text": "Deactivate light.",
+        "type": "transform",
+        "target": "hack_watch",
+        "msg": "You deactivate the power glove's screen."
+      },
+      {
+        "type": "manualnoise",
+        "no_charges_message": "The power glove is out of batteries.",
+        "use_message": "Bzzzzzzzzzzt!"
+      }
+    ],
+    "flags": [ "LIGHT_100", "CHARGEDIM", "TRADER_AVOID" ]
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "hack_watch_adv",
+    "name": { "str": "modified Power Glove (off)", "str_pl": "modified Power Gloves (off)" },
+    "description": "A heavily modified digital power glove with various electronic and defense systems, powered by standard batteries.  Activate to select a function.",
+    "weight": "1100 g",
+    "volume": "440 ml",
+    "to_hit": -1,
+    "color": "light_gray",
+    "covers": [ "HAND_EITHER" ],
+    "price": 12000,
+    "material": [ "plastic", "aluminum" ],
+    "flags": [
+      "WATCH",
+      "WATER_FRIENDLY",
+      "BELTED",
+      "FRAGILE",
+      "ALLOWS_NATURAL_ATTACKS",
+      "THERMOMETER",
+      "NO_UNLOAD",
+      "OVERSIZE",
+      "VARSIZE" ],
+    "coverage": 25,
+    "symbol": "[",
+    "ammo": "battery",
+    "max_charges": 80,
+    "initial_charges": 40,
+    "charges_per_use": 5,
+    "no_charges_message": "The power glove is out of batteries.",
+    "use_action": [
+      { "type": "PORTABLE_GAME" },
+      { "type": "ROBOTCONTROL" },
+      { "type": "RADIOCONTROL" },
+      { "type": "WEATHER_TOOL" },
+      { "type": "REMOTEVEH" },
+      { "type": "TAZER" },
+      {
+        "type": "transform",
+        "target": "hack_watch_on",
+        "menu_text": "Switch on the power glove",
+        "active": true,
+        "msg": "You activate the power glove's scout systems.",
+        "need_charges": 10,
+        "need_charges_msg": "Not enough charge to activate.",
+        "moves": 25
+      },
+      {
+        "type": "manualnoise",
+        "no_charges_message": "The power glove is out of batteries.",
+        "use_message": "Bzzzzzzzzzzt!"
+      }
+    ],
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_battery_cell",
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell",
+          "light_minus_disposable_cell",
+          "light_disposable_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 2
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "hack_watch_adv_on",
+    "copy-from": "hack_watch",
+    "name": { "str": "advanced power glove (on)", "str_pl": "advanced power gloves (on)" },
+    "turns_per_charge": 1,
+    "revert_to": "hack_watch",
+    "use_action": {
+      "menu_text": "Deactivate mapping.",
+      "type": "transform",
+      "target": "hack_watch",
+      "msg": "You deactivate the power glove's scout systems."
+    },
+    "flags": [ "LIGHT_500", "CHARGEDIM", "ELECTRIC_IMMUNE", "TRADER_AVOID" ]
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "monocular_lcd",
+    "name": { "str": "Zintendo LCD goggle" },
+    "description": "A monocular video goggle for framing and data info return.  Use it to switch it on.",
+    "weight": "112 g",
+    "volume": "100 ml",
+    "to_hit": -1,
+    "color": "light_gray",
+    "covers": [ "EYES" ],
+    "price": 3000,
+    "material": [ "plastic" ],
+    "flags": [ "WATCH", "WATER_FRIENDLY", "BELTED", "FRAGILE" ],
+    "coverage": 10,
+    "symbol": "[",
+    "ammo": "battery",
+    "max_charges": 50,
+    "initial_charges": 20,
+    "use_action": {
+      "type": "transform",
+      "target": "monocular_lcd_on",
+      "menu_text": "Activate the monocular display",
+      "active": true,
+      "msg": "The LCD screen in the goggle lights up with a hellish glow.",
+      "need_charges": 2,
+      "need_charges_msg": "The LCD goggle does not have enough charge.",
+      "moves": 10
+    },
+        "magazines": [
+      [
+        "battery",
+        [
+          "light_battery_cell",
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell",
+          "light_minus_disposable_cell",
+          "light_disposable_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 1
+  },
+  {
+    "type": "TOOL_ARMOR",
+    "id": "monocular_lcd_on",
+    "copy-from": "monocular_lcd",
+    "name": { "str": "Zintendo LCD goggle (on)", "str_pl": "Zintendo LCD goggles (on)" },
+    "description": "A monocular video goggle for framing and data info return.  It's picking up some strange signals, from somewhere.",
+    "turns_per_charge": 1,
+    "artifact_data": { "effects_worn": [ "AEP_SCHIZO" ] },
+    "use_action": {
+      "menu_text": "Deactivate the monocular display",
+      "type": "transform",
+      "target": "monocular_lcd",
+      "msg": "You switch that monsterous thing off."
+    }
+  }
+]

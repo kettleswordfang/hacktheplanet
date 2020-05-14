@@ -1,0 +1,180 @@
+[
+  {
+    "id": "cashcard_encoder",
+    "type": "TOOL",
+    "category": "tools",
+    "name": { "str": "magnetic stripe encoder" },
+    "description": "A homemade magnetic stripe card writer, used to recode a cash card, solar powered and barely uses any charge. Before the cataclysm, possession of this would have landed you straight in jail. Unfortunately you can't use it to make free money.",
+    "weight": "700 g",
+    "volume": "600 ml",
+    "price": 7700,
+    "to_hit": -1,
+    "bashing": 1,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ";",
+    "color": "dark_gray"
+  },
+  {
+    "id": "makeshift_navigation",
+    "type": "TOOL",
+    "category": "tools",
+    "name": { "str": "makeshift navigation device" },
+    "description": "This cell phone is now capable of receiving information from GPS satellites and is able to calculate the device's geographical position.  Use it to expand your map.",
+    "weight": "286 g",
+    "volume": "120 ml",
+    "price": 20000,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ";",
+    "color": "light_gray",
+    "ammo": "battery",
+    "max_charges": 100,
+    "charges_per_use": 100,
+    "use_action": [
+      {
+        "menu_text": "examine GPS map",
+        "type": "reveal_map",
+        "need_charges": 100,
+        "need_charges_msg": "The cellphone's batteries are not fully charged.",
+        "radius": 50,
+        "terrain": [ "hiway", "road", "bridge", "shelter", "field" ],
+        "message": "You expand your current map slightly, but the GPS chip in the cell phone gets fried."
+      }
+    ],
+    "flags": [ "WATCH", "ALARMCLOCK" ],
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_minus_disposable_cell",
+          "light_battery_cell",
+          "light_disposable_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 1
+  },
+  {
+    "id": "electroweather",
+    "type": "TOOL",
+    "category": "tools",
+    "name": { "str": "makeshift digital weatherstation" },
+    "description": "This cell phone is now capable of connecting to the remaining weather satellites to check current conditions.  It requires 10 charges of battery power per use.",
+    "weight": "286 g",
+    "volume": "120 ml",
+    "price": 20000,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ";",
+    "color": "light_gray",
+    "ammo": "battery",
+    "max_charges": 100,
+    "charges_per_use": 10,
+    "use_action": [
+      {
+        "type": "WEATHER_TOOL",
+        "need_charges_msg": "The cellphone does not have enough charge.",
+        "message": "You check the current weather."
+      }
+    ],
+    "flags": [ "WATCH", "THERMOMETER", "HYGROMETER", "BAROMETER" ],
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_minus_disposable_cell",
+          "light_battery_cell",
+          "light_disposable_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 1
+  },
+  {
+    "id": "electropick",
+    "type": "TOOL",
+    "category": "tools",
+    "name": { "str": "homemade electronic lockbreaker" },
+    "description": "This homemade device consists of a thick, heavy rod made from a dozen smaller components that telescope out of the base control.  With a little skill, it can be used to silently pick locks.  It requires 25 charges of battery power per use.",
+    "weight": "440 g",
+    "volume": "220 ml",
+    "price": 40000,
+    "to_hit": 1,
+    "bashing": 5,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": ",",
+    "color": "green",
+    "ammo": "battery",
+    "max_charges": 100,
+    "initial_charges": 25,
+    "charges_per_use": 25,
+    "use_action": { "type": "picklock", "pick_quality": 5 },
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_minus_disposable_cell",
+          "light_battery_cell",
+          "light_disposable_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 1
+  },
+  {
+    "id": "radio_scope",
+    "type": "TOOL",
+    "category": "tools",
+    "name": { "str": "scope scouter" },
+    "description": "A remote-controlled video camera on small wheels.  It has a small light attached, as well as a noise maker.",
+    "weight": "2400 g",
+    "volume": "4000 ml",
+    "price": 9999,
+    "to_hit": 1,
+    "bashing": 3,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "#",
+    "color": "red",
+    "ammo": "battery",
+    "initial_charges": 40,
+    "max_charges": 40,
+    "revert_to": "radio_scope",
+    "use_action": "RADIOCAR",
+    "flags": [ "RADIO_CONTAINER", "TRADER_AVOID" ],
+    "magazines": [
+      [
+        "battery",
+        [
+          "light_plus_battery_cell",
+          "light_minus_battery_cell",
+          "light_minus_disposable_cell",
+          "light_battery_cell",
+          "light_disposable_cell",
+          "light_atomic_battery_cell",
+          "light_minus_atomic_battery_cell"
+        ]
+      ]
+    ],
+    "magazine_well": 1
+  },
+  {
+    "id": "radio_scope_on",
+    "copy-from": "radio_scope",
+    "type": "TOOL",
+    "name": { "str": "scope scouter (on)", "str_pl": "scope scouters (on)" },
+    "description": "A remote-controlled video camera on small wheels, buzzing quietly.  You could use the power glove or a remote to control it.",
+    "turns_per_charge": 4,
+    "use_action": "RADIOCARON",
+    "flags": [ "LIGHT_15", "RADIO_CONTAINER", "TRADER_AVOID" ]
+  }
+]
